@@ -1,0 +1,82 @@
+body {
+    background: url("https://images.unsplash.com/photo-1554284126-aa88f22d8b74")
+        no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    margin: 0;
+}
+
+.overlay {
+    background: rgba(0, 0, 0, 0.75);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.logo {
+    font-size: 60px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: #e10600;
+}
+
+.slogan {
+    font-size: 22px;
+    margin-top: 15px;
+    opacity: 0.9;
+}
+
+.btn-custom {
+    margin-top: 30px;
+    padding: 12px 30px;
+    font-size: 18px;
+}
+
+.buttons {
+    margin-top: 40px;
+}
+
+.btn-main {
+    background: #e10600;
+    color: #fff;
+    padding: 14px 35px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 50px;
+    text-decoration: none;
+    margin: 10px;
+    display: inline-block;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(225, 6, 0, 0.4);
+}
+
+.btn-main:hover {
+    background: #ff1a1a;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 25px rgba(225, 6, 0, 0.6);
+}
+
+.btn-outline-main {
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    padding: 14px 35px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 50px;
+    text-decoration: none;
+    margin: 10px;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-main:hover {
+    background: #ffffff;
+    color: #000000;
+    transform: translateY(-3px);
+}
