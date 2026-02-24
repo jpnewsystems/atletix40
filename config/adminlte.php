@@ -311,6 +311,11 @@ return [
     | MENU ADMINISTRADOR
     |--------------------------------------------------------------------------
     */
+        [
+            'text' => 'Mi Perfil',
+            'url' => '/perfil_usuario',
+            'icon' => 'fas fa-user'
+        ],
 
         [
             'text' => 'Usuarios',
@@ -335,14 +340,16 @@ return [
 
         [
             'text' => 'Mi Perfil',
-            'url'  => '/perfil',
+            'url' => '/perfil_usuario',
             'icon' => 'fas fa-user',
+            'can'  => 'usuario'
         ],
 
         [
             'text' => 'Actividad',
             'url'  => '/actividad',
             'icon' => 'fas fa-running',
+            'can'  => 'usuario'
         ],
 
     ],
