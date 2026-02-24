@@ -1,5 +1,10 @@
 @extends('adminlte::auth.auth-page', ['authType' => 'register'])
 
+@section('adminlte_css_pre')
+    <link rel="stylesheet" href="{{ asset('vendor/icheck-bootstrap/icheck-bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/atletix/login.css') }}">
+@stop
+
 @php
     $loginUrl = View::getSection('login_url') ?? config('adminlte.login_url', 'login');
     $registerUrl = View::getSection('register_url') ?? config('adminlte.register_url', 'register');
@@ -13,97 +18,130 @@
     }
 @endphp
 
-@section('auth_header', __('adminlte::adminlte.register_message'))
 
+{{-- HEADER PERSONALIZADO --}}
+@section('auth_header')
+
+    <div style="text-align:center">
+        <p style="font-size:13px; opacity:0.8; margin-top:6px;">Transforma tu disciplina en resultados</p>
+    </div>
+
+    </div>
+
+@stop
+
+{{-- FORMULARIO --}}
 @section('auth_body')
+
     <form action="{{ $registerUrl }}" method="post">
         @csrf
 
-        {{-- Name field --}}
+
+        {{-- Nombre --}}
         <div class="input-group mb-3">
+
             <input type="text" name="name" class="form-control @error('name') is-invalid @enderror"
-                value="{{ old('name') }}" placeholder="{{ __('adminlte::adminlte.full_name') }}" autofocus>
+                value="{{ old('name') }}" placeholder="Nombre completo" autofocus>
 
             <div class="input-group-append">
                 <div class="input-group-text">
-                    <span class="fas fa-user {{ config('adminlte.classes_auth_icon', '') }}"></span>
+                    <span class="fas fa-user"></span>
                 </div>
             </div>
 
             @error('name')
-                <span class="invalid-feedback" role="alert">
+                <span class="invalid-feedback">
                     <strong>{{ $message }}</strong>
                 </span>
             @enderror
+
         </div>
 
-        {{-- Email field --}}
+
+
+        {{-- Email --}}
         <div class="input-group mb-3">
+
             <input type="email" name="email" class="form-control @error('email') is-invalid @enderror"
-                value="{{ old('email') }}" placeholder="{{ __('adminlte::adminlte.email') }}">
+                value="{{ old('email') }}" placeholder="Correo electrónico">
 
             <div class="input-group-append">
                 <div class="input-group-text">
-                    <span class="fas fa-envelope {{ config('adminlte.classes_auth_icon', '') }}"></span>
+                    <span class="fas fa-envelope"></span>
                 </div>
             </div>
 
             @error('email')
-                <span class="invalid-feedback" role="alert">
+                <span class="invalid-feedback">
                     <strong>{{ $message }}</strong>
                 </span>
             @enderror
+
         </div>
 
-        {{-- Password field --}}
+
+
+        {{-- Password --}}
         <div class="input-group mb-3">
+
             <input type="password" name="password" class="form-control @error('password') is-invalid @enderror"
-                placeholder="{{ __('adminlte::adminlte.password') }}">
+                placeholder="Contraseña">
 
             <div class="input-group-append">
                 <div class="input-group-text">
-                    <span class="fas fa-lock {{ config('adminlte.classes_auth_icon', '') }}"></span>
+                    <span class="fas fa-lock"></span>
                 </div>
             </div>
 
             @error('password')
-                <span class="invalid-feedback" role="alert">
+                <span class="invalid-feedback">
                     <strong>{{ $message }}</strong>
                 </span>
             @enderror
+
         </div>
 
-        {{-- Confirm password field --}}
+
+
+        {{-- Confirm Password --}}
         <div class="input-group mb-3">
-            <input type="password" name="password_confirmation"
-                class="form-control @error('password_confirmation') is-invalid @enderror"
-                placeholder="{{ __('adminlte::adminlte.retype_password') }}">
+
+            <input type="password" name="password_confirmation" class="form-control" placeholder="Confirmar contraseña">
 
             <div class="input-group-append">
                 <div class="input-group-text">
-                    <span class="fas fa-lock {{ config('adminlte.classes_auth_icon', '') }}"></span>
+                    <span class="fas fa-lock"></span>
                 </div>
             </div>
 
-            @error('password_confirmation')
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-            @enderror
         </div>
 
-        {{-- Register button --}}
-        <button type="submit" class="btn btn-block {{ config('adminlte.classes_auth_btn', 'btn-flat btn-primary') }}">
+
+
+        {{-- BOTON --}}
+        <button type="submit" class="btn btn-danger btn-block">
+
             <span class="fas fa-user-plus"></span>
-            {{ __('adminlte::adminlte.register') }}
+
+            Crear Cuenta
+
         </button>
+
     </form>
+
 @stop
 
+
+
+{{-- FOOTER --}}
 @section('auth_footer')
-    <p class="my-0">
+
+    <p class="text-center">
+
         <a href="{{ $loginUrl }}">
-            {{ __('adminlte::adminlte.i_already_have_a_membership') }}
+            Ya tengo una cuenta
         </a>
+
     </p>
+
 @stop

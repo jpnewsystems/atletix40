@@ -1,5 +1,10 @@
 @extends('adminlte::auth.auth-page', ['authType' => 'login'])
 
+@section('adminlte_css_pre')
+    <link rel="stylesheet" href="{{ asset('vendor/icheck-bootstrap/icheck-bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/atletix/login.css') }}">
+@stop
+
 @php
     $passResetUrl = View::getSection('password_reset_url') ?? config('adminlte.password_reset_url', 'password/reset');
 

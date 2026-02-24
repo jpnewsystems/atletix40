@@ -1,0 +1,12 @@
+body.login-page {
+    background: url("../../images/img-login.png") no-repeat center center fixed;
+    background-size: cover;
+}
+
+.login-box {
+    margin-top: 5%;
+}
+
+.login-card-body {
+    border-radius: 15px;
+}

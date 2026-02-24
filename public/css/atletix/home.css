@@ -1,9 +1,15 @@
 body {
-    background: url("https://images.unsplash.com/photo-1554284126-aa88f22d8b74")
-        no-repeat center center fixed;
+    background: url("../../images/img-home.jpeg") no-repeat center center fixed;
     background-size: cover;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
     height: 100vh;
     margin: 0;
+    will-change: background-image;
+    /* Optimización de rendering */
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform: translate3d(0, 0, 0);
 }
 
 .overlay {
@@ -14,6 +20,11 @@ body {
     justify-content: center;
     text-align: center;
     color: white;
+    /* Optimización de rendering */
+    contain: layout style paint;
+    will-change: opacity;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
 }
 
 .logo {

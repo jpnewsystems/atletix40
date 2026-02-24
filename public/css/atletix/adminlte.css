@@ -1,0 +1,15 @@
+/* LOGO SIDEBAR */
+.brand-image {
+    max-height: 45px !important;
+    width: auto !important;
+}
+
+/* Centrar logo */
+.brand-link {
+    text-align: center;
+}
+
+/* Ajustar header */
+.brand-link img {
+    max-height: 50px !important;
+}

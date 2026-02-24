@@ -1,5 +1,10 @@
 @extends('adminlte::auth.auth-page', ['authType' => 'login'])
 
+@section('adminlte_css_pre')
+    <link rel="stylesheet" href="{{ asset('vendor/icheck-bootstrap/icheck-bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/atletix/login.css') }}">
+@stop
+
 @php
     $passEmailUrl = View::getSection('password_email_url') ?? config('adminlte.password_email_url', 'password/email');
 
@@ -14,7 +19,7 @@
 
 @section('auth_body')
 
-    @if(session('status'))
+    @if (session('status'))
         <div class="alert alert-success">
             {{ session('status') }}
         </div>

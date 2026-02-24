@@ -22,12 +22,26 @@
 @endphp
 
 @section('auth_header')
-    <h4 class="text-center font-weight-bold">
+    {{--  <h4 class="text-center font-weight-bold">
         ATLETI<span style="color:#e10600;">X</span>40
-    </h4>
+    </h4> --}}
     <p class="text-center small text-muted">
         Transforma tu disciplina en resultados.
     </p>
+@stop
+@section('auth_header')
+    <div class="text-center">
+        <a href="{{ url(config('adminlte.dashboard_url', '/')) }}">
+            <img src="{{ asset('images/logo.png') }}" class="brand-image-wide" width="200" alt="ATLETIX40">
+        </a>
+
+        <div class="brand-text">
+            <h4 class="text-center font-weight-bold" style="margin-top:10px;">
+                ATLETI<span style="color:#e10600;">X</span>40
+            </h4>
+            <p class="text-center small text-muted">Transforma tu disciplina en resultados.</p>
+        </div>
+    </div>
 @stop
 
 @section('auth_body')

@@ -1,6 +1,6 @@
-body.login-page {
-    background: url("/public/images/atletix-bg.png") no-repeat center center
-        fixed;
+body.login-page,
+body.register-page {
+    background: url("../../images/img-login.png") no-repeat center center fixed;
     background-size: cover;
 }
 
@@ -10,4 +10,68 @@ body.login-page {
 
 .login-card-body {
     border-radius: 15px;
+}
+
+/* Make the logo wider and more visible horizontally */
+.brand-image-wide {
+    height: auto;
+    width: 200px;
+    display: inline-block;
+    margin-right: 10px;
+    max-width: 100%;
+}
+
+.brand-text {
+    vertical-align: middle;
+    display: inline-block;
+    margin-left: 6px;
+}
+
+/* Inputs visibles en modo oscuro */
+
+.login-box .form-control {
+    background-color: #2b3137 !important;
+    color: #ffffff !important;
+    border: 1px solid #555 !important;
+}
+
+/* Texto mientras escribes */
+.login-box .form-control:focus {
+    background-color: #2b3137 !important;
+    color: #ffffff !important;
+    border-color: #e63946 !important;
+    box-shadow: none;
+}
+
+/* Placeholder */
+.login-box .form-control::placeholder {
+    color: #bfc5cc !important;
+}
+
+/* Iconos */
+.input-group-text {
+    background-color: #2b3137 !important;
+    color: #ccc !important;
+    border: 1px solid #555 !important;
+}
+
+/* ===== AUTOCOMPLETE CHROME ===== */
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px #2b3137 inset !important;
+    -webkit-text-fill-color: #ffffff !important;
+
+    border: 1px solid #555 !important;
+
+    transition: background-color 9999s ease-in-out 0s;
+}
+
+/* Firefox */
+
+input:-moz-autofill {
+    background-color: #2b3137 !important;
+    color: #ffffff !important;
 }
