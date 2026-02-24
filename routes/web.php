@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Usuarios\UsuarioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +24,15 @@ Route::get('/', function () {
 Route::get('/home', [HomeController::class, 'index'])
     ->middleware(['auth', 'verified'])
     ->name('home');
+
+Route::middleware(['auth', 'admin'])->group(function () {
+
+    Route::get('/usuarios', [UsuarioController::class, 'index'])->name('usuarios');
+
+    Route::get('/usuarios/toggle/{id}', [UsuarioController::class, 'toggle']);
+
+    Route::get('/usuarios/rol/{id}', [UsuarioController::class, 'rol']);
+});
 
 /*
 |--------------------------------------------------------------------------
