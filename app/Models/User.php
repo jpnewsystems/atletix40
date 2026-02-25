@@ -53,6 +53,23 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function perfil()
     {
-        return $this->hasOne(PerfilUsuario::class);
+        return $this->hasOne(\App\Models\PerfilUsuario::class);
+    }
+
+    public function adminlte_image()
+    {
+        if ($this->perfil && $this->perfil->foto) {
+            return asset('fotos_perfil/' . $this->perfil->foto);
+        }
+
+        // Imagen genérica si no tiene foto
+        return asset('images/user-default.png');
+    }
+
+    public function adminlte_desc()
+    {
+        return $this->role == 'admin'
+            ? 'Administrador'
+            : 'Usuario';
     }
 }

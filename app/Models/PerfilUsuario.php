@@ -16,7 +16,8 @@ class PerfilUsuario extends Model
         'direccion',
         'pais',
         'ciudad',
-        'alias'
+        'alias',
+        'foto'
 
     ];
 }
